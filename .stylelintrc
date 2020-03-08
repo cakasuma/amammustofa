@@ -13,6 +13,7 @@
     "stylelint-config-styled-components"
   ],
   "rules": {
-    "property-no-vendor-prefix": true
+    "property-no-vendor-prefix": true,
+    'value-keyword-case': [true, { ignoreTypes: ['dummyValue'] }]
   }
 }
