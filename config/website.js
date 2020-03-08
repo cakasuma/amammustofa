@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/`,
   url: `https://gatsby-starter-styled.netlify.com/`,
-  title: `Gatsby Starter Styled`,
+  title: `Rahdin Ahmad Mustofa Ghaleb Amami`,
   titleTemplate: `%s — Gatsby Starter Styled`,
   description: `Kick off your next, great Gatsby project with this starter.`,
   image: `/images/meta-image-default.png`, // Path to the default meta image in `static` folder
