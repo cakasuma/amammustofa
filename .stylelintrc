@@ -14,6 +14,6 @@
   ],
   "rules": {
     "property-no-vendor-prefix": true,
-    'value-keyword-case': [true, { ignoreTypes: ['dummyValue'] }]
+    "value-keyword-case": null
   }
 }

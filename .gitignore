@@ -10,3 +10,4 @@ public
 # Environment variables
 .env.*
 !.env.example
+.vscode
