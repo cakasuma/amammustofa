@@ -6,7 +6,7 @@ import BackgroundImage from '@components/BackgroundImage'
 import Image from '@components/Image'
 import { SEO } from '@components/SEO'
 import { Text } from '@components/Text'
-import { Box, Flex } from '@components/Grid'
+import { Box } from '@components/Grid'
 
 const StyledBackground = styled(BackgroundImage)`
   padding: 90px 0 120px;
@@ -66,8 +66,6 @@ const Typer = () => {
   const [count, setCount] = React.useState(1)
 
   React.useEffect(() => {
-    // document.title = `You clicked ${count} times`;
-    console.log('Count: ' + count)
     setCount(1)
   }, [count])
 
