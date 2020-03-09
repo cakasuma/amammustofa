@@ -54,6 +54,7 @@
   "rules": {
     "no-use-before-define": "warn",
     "react/no-danger": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/display-name": "error",
     "react/destructuring-assignment": [
       "error",

@@ -2,32 +2,16 @@ import Typography from 'typography'
 
 const typography = new Typography({
   title: 'Default',
+  googleFonts: [
+    {
+      name: 'Quicksand',
+      styles: ['300', '400', '500', '700'],
+    },
+  ],
   baseFontSize: '18px',
   baseLineHeight: 1.45,
-  headerFontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-  ],
-  bodyFontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-  ],
+  headerFontFamily: ['Quicksand', 'sans-serif'],
+  bodyFontFamily: ['Quicksand', 'sans-serif'],
   scaleRatio: 2.441,
   headerWeight: 700,
   overrideStyles: () => ({

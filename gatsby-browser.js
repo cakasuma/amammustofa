@@ -11,4 +11,11 @@ const website = require('./config/website')
  */
 exports.onClientEntry = () => {
   GoogleAnalytics.initialize(website.googleAnalyticsId)
+
+  // if (!(`IntersectionObserver` in window)) {
+  //   // eslint-disable-next-line no-unused-expressions
+  //   import(`intersection-observer`)
+  //   // eslint-disable-next-line no-console
+  //   console.log(`# IntersectionObserver is polyfilled!`)
+  // }
 }

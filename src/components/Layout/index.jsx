@@ -12,8 +12,7 @@ const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyles />
-      <Header siteTitle="Gatsby Starter Styled" />
-      <Box maxWidth="700px" m="0 auto" px={3}>
+      <Box>
         {children}
         <Box mt={3}>
           <Footer>
