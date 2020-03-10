@@ -62,7 +62,7 @@ function SEO({
       '@type': 'Person',
       name: author,
     },
-    copyrightYear: '2019',
+    copyrightYear: '2020',
     creator: {
       '@type': 'Person',
       name: author,

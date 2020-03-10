@@ -41,8 +41,7 @@ BackgroundSection.defaultProps = {
 
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: cover;
 `
 
