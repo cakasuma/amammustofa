@@ -13,21 +13,11 @@ import {
   Linkedin,
   Github,
   Instagram,
+  Whatsapp,
 } from '@styled-icons/fa-brands'
-import { Phone } from '@styled-icons/feather'
 
 const StyledBackground = styled(BackgroundImage)`
   padding: 90px 0 120px;
-`
-
-const SectionWrapper = styled.div`
-  display: flex;
-  max-width: 1140px;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
 `
 
 const ImageWrapper = styled(Image)`
@@ -37,7 +27,7 @@ const ImageWrapper = styled(Image)`
 `
 
 const StyledTypist = styled(Typist)`
-  color: #ff9801;
+  color: ${props => props.theme.colors.primary[1]};
   font-size: 30px;
   font-weight: bold;
 `
@@ -53,10 +43,16 @@ const SocialWrapper = styled.ul`
 `
 
 const ItemWrapper = styled.a`
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   opacity: 0.4;
   padding: 5px;
   display: block;
+  transition: all 0.25s;
+
+  &:hover {
+    color: ${props => props.theme.colors.primary[1]};
+    opacity: 1;
+  }
 `
 
 const FB = styled(FacebookF)`
@@ -69,22 +65,39 @@ const Li = styled.li`
   padding: 0 5px;
 `
 
-const Contact = styled(Phone)`
-  width: 60px;
-  height: 60px;
-  fill: #ff9801;
+const Contact = styled(Whatsapp)`
+  width: 48px;
+  height: 48px;
+
+  & > path {
+    fill: ${props => props.theme.colors.primary[1]};
+  }
 `
 
 const A = styled.a`
   text-decoration: none;
   display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    ${Text} {
+      color: ${props => props.theme.colors.primary[1]};
+    }
+  }
 `
 
 const IndexPage = () => (
   <Layout>
     <SEO />
     <StyledBackground>
-      <SectionWrapper>
+      <Flex
+        maxWidth="1140px"
+        width="80%"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        m="0 auto"
+      >
         <ImageWrapper />
         <Text
           as="h1"
@@ -136,16 +149,21 @@ const IndexPage = () => (
               </ItemWrapper>
             </Li>
           </SocialWrapper>
-          <Flex maxWidth={150} alignItems="center">
+          <Flex maxWidth={180} alignItems="center">
             <A href="#">
               <Contact />
-              <Text color="white" textDecoration="none" ml="10px">
-                Contact me (whatsapp)
+              <Text
+                color="grey.1"
+                textDecoration="none"
+                ml="10px"
+                transition="color 0.25s"
+              >
+                Contact me
               </Text>
             </A>
           </Flex>
         </Flex>
-      </SectionWrapper>
+      </Flex>
     </StyledBackground>
   </Layout>
 )

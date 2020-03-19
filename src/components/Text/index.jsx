@@ -1,4 +1,11 @@
-import styled, { space, color, layout, typography, propTypes } from '@style'
+import styled, {
+  space,
+  color,
+  layout,
+  typography,
+  propTypes,
+  system,
+} from '@style'
 
 const Text = styled.p`
   margin: 0;
@@ -7,6 +14,9 @@ const Text = styled.p`
   ${color}
   ${layout}
   ${typography}
+  ${system({
+    transition: true,
+  })}
 `
 
 Text.displayName = `Text`

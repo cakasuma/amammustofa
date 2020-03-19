@@ -6,6 +6,7 @@ import styled, {
   background,
   position,
   propTypes,
+  system,
 } from '@style'
 
 const Box = styled.div`
@@ -15,6 +16,9 @@ const Box = styled.div`
   ${border}
   ${background}
   ${position}
+  ${system({
+    transition: true,
+  })}
 `
 
 Box.displayName = `Box`
