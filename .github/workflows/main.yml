@@ -19,9 +19,9 @@ jobs:
         node-version: [12.x]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     - name: Use Node.js ${{ matrix.node-version }}
-    - uses: actions/setup-node@v2
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages and build
@@ -33,7 +33,7 @@ jobs:
         git config --global user.email "amammustofa@gmail.com"
         git config --global user.name "cakasuma"
     - name: GitHub Pages action
-    - uses: peaceiris/actions-gh-pages@v3.5.6
+      uses: peaceiris/actions-gh-pages@v3.5.6
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
