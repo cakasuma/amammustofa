@@ -8,8 +8,5 @@ import { render } from '@test'
  */
 test('first', () => {
   render(<div>hello</div>)
-})
-
-test('second', () => {
   expect(document.body.innerHTML).toEqual('')
 })

@@ -56,7 +56,8 @@ const ItemWrapper = styled.a`
   padding: 5px;
   display: block;
   transition: all 0.25s;
-  cursor: default;
+  cursor: pointer !important;
+  position: relative;
 
   &:hover {
     color: ${(props) => props.theme.colors.primary[1]};
