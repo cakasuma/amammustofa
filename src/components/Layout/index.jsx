@@ -8,6 +8,7 @@ const Layout = ({ children }) => (
     <>
       <GlobalStyles />
       {children}
+      <footer>hello footer</footer>
     </>
   </ThemeProvider>
 )

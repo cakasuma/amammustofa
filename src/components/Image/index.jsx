@@ -1,46 +1,25 @@
+// TODO: replace image.js completely with this component
 import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `StaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.app/gatsby-image
- * - `StaticQuery`: https://gatsby.app/staticquery
- */
+const QueryImage = ({ data, alt, width, height, className }) => {
+  return (
+    <Img
+      alt={alt}
+      fluid={data.childImageSharp.fluid}
+      width={width}
+      className={className}
+      height={height}
+    />
+  )
+}
 
-const Image = ({ className }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 270) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <Img
-        className={className}
-        fluid={data.placeholderImage.childImageSharp.fluid}
-      />
-    )}
-  />
-)
-
-Image.propTypes = {
+QueryImage.propTypes = {
+  alt: PropTypes.string,
   className: PropTypes.string,
+  data: PropTypes.object,
+  height: PropTypes.string,
+  width: PropTypes.string,
 }
-
-Image.defaultProps = {
-  className: 'image-gatsby',
-}
-export default Image
+export default QueryImage

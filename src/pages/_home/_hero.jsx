@@ -1,5 +1,6 @@
 import React from 'react'
 import Typist from 'react-typist'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@style'
 import Particles from 'react-particles-js'
 import Image from '@components/Image'
@@ -13,6 +14,18 @@ import {
   Whatsapp,
 } from '@styled-icons/fa-brands'
 import { Mail } from '@styled-icons/feather/Mail'
+
+const query = graphql`
+  query {
+    image: file(relativePath: { eq: "profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 const ParticlesAbsolute = styled(Particles)`
   position: absolute;
@@ -47,17 +60,24 @@ const SocialWrapper = styled.ul`
   border-radius: 50px;
   list-style: none;
   margin: 0;
-  height: fit-content;
 `
 
 const ItemWrapper = styled.a`
   color: ${(props) => props.theme.colors.white};
   opacity: 0.4;
-  padding: 5px;
-  display: block;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   transition: all 0.25s;
   cursor: pointer !important;
   position: relative;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+  }
 
   &:hover {
     color: ${(props) => props.theme.colors.primary[1]};
@@ -65,107 +85,105 @@ const ItemWrapper = styled.a`
   }
 `
 
-const FB = styled(FacebookF)`
-  height: 16px;
-  width: 16px;
-`
-
 const Li = styled.li`
   margin: 0;
   padding: 0 5px;
 `
 
-const Hero = () => (
-  <StyledBackground>
-    <ParticlesAbsolute
-      params={{
-        particles: {
-          number: {
-            value: 50,
-          },
-          size: {
-            value: 3,
-          },
-        },
-        interactivity: {
-          events: {
-            onhover: {
-              enable: true,
-              mode: 'repulse',
+const Hero = () => {
+  const data = useStaticQuery(query)
+  return (
+    <StyledBackground>
+      <ParticlesAbsolute
+        params={{
+          particles: {
+            number: {
+              value: 50,
+            },
+            size: {
+              value: 3,
             },
           },
-        },
-      }}
-    />
-    <Flex
-      maxWidth="1140px"
-      width="80%"
-      justifyContent="center"
-      alignItems="center"
-      flexDirection="column"
-      m="0 auto"
-    >
-      <ImageWrapper />
-      <Text
-        as="h1"
-        fontSize="36px"
-        color="white"
-        mt="30px"
-        mb="20px"
-        fontWeight="normal"
-      >
-        Hello Guys, I’m
-        <strong> Amam Mustofa</strong>
-      </Text>
-      <Flex mb="20px">
-        <Text mr="6px" fontSize="30px" color="white">
-          I am
-        </Text>
-        <Typer />
-      </Flex>
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'repulse',
+              },
+            },
+          },
+        }}
+      />
       <Flex
-        width="100%"
-        mt="12px"
+        maxWidth="1140px"
+        width="80%"
         justifyContent="center"
-        flexWrap="wrap"
         alignItems="center"
+        flexDirection="column"
+        m="0 auto"
       >
-        <SocialWrapper>
-          <Li>
-            <ItemWrapper href="https://www.facebook.com/amam.mustofa">
-              <FB />
-            </ItemWrapper>
-          </Li>
-          <Li>
-            <ItemWrapper href="mailto:amammustofa@gmail.com">
-              <Mail width="16px" height="16px" />
-            </ItemWrapper>
-          </Li>
-          <Li>
-            <ItemWrapper href="https://www.linkedin.com/in/mustofa-ghaleb-amami/">
-              <Linkedin width="16px" height="16px" />
-            </ItemWrapper>
-          </Li>
-          <Li>
-            <ItemWrapper href="https://github.com/cakasuma">
-              <Github width="16px" height="16px" />
-            </ItemWrapper>
-          </Li>
-          <Li>
-            <ItemWrapper href="https://www.instagram.com/rahdinahmad/">
-              <Instagram width="16px" height="16px" />
-            </ItemWrapper>
-          </Li>
-          <Li>
-            <ItemWrapper href="tel:+60182655318">
-              <Whatsapp width="16px" height="16px" />
-            </ItemWrapper>
-          </Li>
-        </SocialWrapper>
+        <ImageWrapper data={data.image} />
+        <Text
+          as="h1"
+          fontSize="36px"
+          color="white"
+          mt="30px"
+          mb="20px"
+          fontWeight="normal"
+        >
+          Hello Guys, I’m
+          <strong> Amam Mustofa</strong>
+        </Text>
+        <Flex mb="20px">
+          <Text mr="6px" fontSize="30px" color="white">
+            I am
+          </Text>
+          <Typer />
+        </Flex>
+        <Flex
+          width="100%"
+          mt="12px"
+          justifyContent="center"
+          flexWrap="wrap"
+          alignItems="center"
+        >
+          <SocialWrapper>
+            <Li>
+              <ItemWrapper href="https://www.facebook.com/amam.mustofa">
+                <FacebookF />
+              </ItemWrapper>
+            </Li>
+            <Li>
+              <ItemWrapper href="mailto:amammustofa@gmail.com">
+                <Mail width="16px" height="16px" />
+              </ItemWrapper>
+            </Li>
+            <Li>
+              <ItemWrapper href="https://www.linkedin.com/in/mustofa-ghaleb-amami/">
+                <Linkedin width="16px" height="16px" />
+              </ItemWrapper>
+            </Li>
+            <Li>
+              <ItemWrapper href="https://github.com/cakasuma">
+                <Github width="16px" height="16px" />
+              </ItemWrapper>
+            </Li>
+            <Li>
+              <ItemWrapper href="https://www.instagram.com/rahdinahmad/">
+                <Instagram width="16px" height="16px" />
+              </ItemWrapper>
+            </Li>
+            <Li>
+              <ItemWrapper href="tel:+60182655318">
+                <Whatsapp width="16px" height="16px" />
+              </ItemWrapper>
+            </Li>
+          </SocialWrapper>
+        </Flex>
       </Flex>
-    </Flex>
-  </StyledBackground>
-)
+    </StyledBackground>
+  )
+}
 
 const Typer = () => {
   const [count, setCount] = React.useState(1)
