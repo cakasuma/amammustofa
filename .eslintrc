@@ -87,6 +87,7 @@
       {
         "aspects": ["invalidHref"]
       }
-    ]
+    ],
+    "prettier/prettier": "warn"
   }
 }

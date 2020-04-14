@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({
+const SEO = ({
   title,
   description,
   lang,
@@ -11,7 +11,7 @@ function SEO({
   pathname,
   isArticle,
   articleMeta,
-}) {
+}) => {
   // eslint-disable-next-line no-use-before-define
   const { site } = useStaticQuery(query)
 

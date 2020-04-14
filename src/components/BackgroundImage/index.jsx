@@ -9,7 +9,7 @@ const BackgroundSection = ({ className, children }) => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "intro-hero.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_tracedSVG
@@ -18,7 +18,7 @@ const BackgroundSection = ({ className, children }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       // Set ImageData.
       const imageData = data.placeholderImage.childImageSharp.fluid
       return (

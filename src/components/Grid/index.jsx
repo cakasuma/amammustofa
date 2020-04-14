@@ -7,5 +7,6 @@
 import Box from './Box'
 import Flex from './Flex'
 import Br from './Br'
+import Container from './Container'
 
-export { Box, Flex, Br }
+export { Box, Flex, Br, Container }
