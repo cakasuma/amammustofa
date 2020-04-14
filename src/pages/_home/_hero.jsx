@@ -136,27 +136,27 @@ const Hero = () => (
             </ItemWrapper>
           </Li>
           <Li>
-            <ItemWrapper href="#">
+            <ItemWrapper href="mailto:amammustofa@gmail.com">
               <Mail width="16px" height="16px" />
             </ItemWrapper>
           </Li>
           <Li>
-            <ItemWrapper href="#">
+            <ItemWrapper href="https://www.linkedin.com/in/mustofa-ghaleb-amami/">
               <Linkedin width="16px" height="16px" />
             </ItemWrapper>
           </Li>
           <Li>
-            <ItemWrapper href="#">
+            <ItemWrapper href="https://github.com/cakasuma">
               <Github width="16px" height="16px" />
             </ItemWrapper>
           </Li>
           <Li>
-            <ItemWrapper href="#">
+            <ItemWrapper href="https://www.instagram.com/rahdinahmad/">
               <Instagram width="16px" height="16px" />
             </ItemWrapper>
           </Li>
           <Li>
-            <ItemWrapper href="#">
+            <ItemWrapper href="tel:+60182655318">
               <Whatsapp width="16px" height="16px" />
             </ItemWrapper>
           </Li>
