@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@style'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from '@components/Image'
-import { Container, Flex } from '@components/Grid'
+import { Container, Flex, Box } from '@components/Grid'
 import { Text } from '@components/Text'
 
 const query = graphql`
@@ -14,6 +14,18 @@ const query = graphql`
         }
       }
     }
+  }
+`
+
+const Ul = styled(Box).attrs({ as: 'ul' })`
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+
+  & > li {
+    width: 50%;
+    float: left;
+    padding-bottom: 5px;
   }
 `
 
@@ -54,7 +66,7 @@ const Span = styled.span`
 `
 
 const ImageWrapper = styled(Image)`
-  width: 350px;
+  width: 280px;
 `
 
 const IndexPage = () => {
@@ -70,11 +82,61 @@ const IndexPage = () => {
           <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center">
             <ImageWrapper data={data.image} />
           </Flex>
-          <Flex pl={{ lg: '15px' }} width={{ lg: 0.668, md: 1 }}>
+          <Flex
+            pl={{ lg: '15px' }}
+            width={{ lg: 0.668, md: 1 }}
+            flexDirection="column"
+          >
             <Text my={4} fontSize={4} lineHeight="36px" fontWeight="300">
-              Hello, I’m <strong>Mustofa Amami</strong>, an independent Frontend
+              Hello, I’m <strong>Amam Mustofa</strong>, an independent Frontend
               Developer based in Malaysia.
             </Text>
+            <Text mb={5} fontWeight="300">
+              I always aim to take full responsibility and do my best, My
+              purpose is to build long term, strong and mutually beneficial
+              relationships with people or clients. and as a developer i have to
+              make the most efficient way with concern of the clients to make a
+              better program or system.
+            </Text>
+            <Text as="h4" fontWeight="300" fontSize={4} mb={4}>
+              Personal information
+            </Text>
+            <Ul mb={4}>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Name:</strong> Mustofa Ghaleb Amami
+                </Text>
+              </li>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Address:</strong> Cyberjaya, Malaysia
+                </Text>
+              </li>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Birthday:</strong> 14 April 1998
+                </Text>
+              </li>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Phone:</strong>{' '}
+                  <a href="tel:+60182655318">+60 182 655 318</a>
+                </Text>
+              </li>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Job:</strong> Front-end Developer
+                </Text>
+              </li>
+              <li>
+                <Text fontWeight="300">
+                  <strong>Email:</strong>{' '}
+                  <a href="mailto:amammustofa@gmail.com">
+                    amammustofa@gmail.com
+                  </a>
+                </Text>
+              </li>
+            </Ul>
           </Flex>
         </Flex>
       </Container>

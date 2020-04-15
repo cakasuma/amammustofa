@@ -12,6 +12,19 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  strong {
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ff9801;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `
 
 export default GlobalStyles
