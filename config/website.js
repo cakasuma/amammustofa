@@ -15,9 +15,9 @@ module.exports = {
 
   // schema.org JSONLD
   headline: `Let's build career together`,
-  author: ``,
+  author: `Rahdin ahmad mustofa ghaleb amami (cakasuma)`,
 
   // Google & Twitter
-  googleAnalyticsId: `UA-XXXXX`, // Google Analytics ID
+  googleAnalyticsId: `UA-148024361-2`, // Google Analytics ID
   twitter: `@amammustofa`, // Twitter username
 }
