@@ -18,8 +18,15 @@ const QueryImage = ({ data, alt, width, height, className }) => {
 QueryImage.propTypes = {
   alt: PropTypes.string,
   className: PropTypes.string,
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
   height: PropTypes.string,
   width: PropTypes.string,
+}
+
+QueryImage.defaultProps = {
+  alt: '',
+  className: '',
+  height: '',
+  width: '',
 }
 export default QueryImage
