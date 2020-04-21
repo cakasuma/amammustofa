@@ -34,7 +34,6 @@ jobs:
       - name: Install Packages and build
         run: |
           npm ci
-          npm run clean
           npm run build
       - name: Setup git config
         run: |
