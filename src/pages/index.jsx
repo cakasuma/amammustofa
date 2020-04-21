@@ -11,7 +11,6 @@ const Main = styled.main`
   position: relative;
   margin: -90px auto 0;
   background: #fff;
-  z-index: 10;
 `
 
 const IndexPage = () => (

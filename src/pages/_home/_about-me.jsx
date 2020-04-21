@@ -59,7 +59,7 @@ const Span = styled.span`
   font-size: 100px;
   width: 100%;
   left: 0;
-  color: #ff9801;
+  color: ${(props) => props.theme.colors.primary[1]};
   opacity: 0.1;
   font-weight: 500;
   text-align: center;
