@@ -34,9 +34,11 @@ const ScrollTop = () => {
   }
 
   React.useEffect(() => {
-    document.addEventListener('scroll', () => {
-      toggleVisibility()
-    })
+    document.addEventListener('scroll', toggleVisibility)
+
+    return () => {
+      document.removeEventListener('scroll', toggleVisibility)
+    }
   }, [])
   return (
     <>
