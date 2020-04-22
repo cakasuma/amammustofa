@@ -40,11 +40,6 @@ const SEO = ({
     url: `${siteUrl}${pathname || ''}`,
   }
 
-  // schema.org in JSONLD format
-  // https://developers.google.com/search/docs/guides/intro-structured-data
-  // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
-  // Copied from https://github.com/LeKoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx
-
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -157,7 +152,6 @@ const SEO = ({
     >
       <html lang={seo.lang} />
       <meta name="description" content={seo.description} />
-      <meta name="gatsby-starter" content="Gatsby Starter Styled" />
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={seo.url} />
