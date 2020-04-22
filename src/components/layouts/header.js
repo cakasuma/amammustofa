@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Link } from '@components/Link'
-import { Box } from '@components/Grid'
-import { Text } from '@components/Text'
+import { Link, Text } from '@components/elements'
+import { Box } from '@components/containers'
 
 const Header = ({ siteTitle }) => (
   <Box as="header" bg="primary.800" px={3} py={3} mb={4}>

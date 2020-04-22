@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@style'
-import { Layout } from '@components/Layout'
-import { SEO } from '@components/SEO'
+import { Layout, Seo } from '@components/layouts'
 import Hero from './_home/_hero'
 import AboutMe from './_home/_about-me'
 
@@ -15,7 +14,7 @@ const Main = styled.main`
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
+    <Seo />
     <Hero />
     <Main>
       <AboutMe />

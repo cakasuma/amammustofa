@@ -1,6 +1,6 @@
 import styled from '@style'
 
-import Box from './Box'
+import Box from './box'
 
 const Container = styled(Box)`
   position: relative;
@@ -25,7 +25,12 @@ const Container = styled(Box)`
   }
 
   @media (min-width: 1200px) {
-    width: 1140px;
+    width: 1200px;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1600px) {
+    width: 1400px;
     max-width: 100%;
   }
 `

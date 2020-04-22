@@ -1,6 +1,6 @@
 import styled, { flexbox, propTypes } from '@style'
 
-import Box from './Box'
+import Box from './box'
 
 const Flex = styled(Box)`
   ${flexbox}

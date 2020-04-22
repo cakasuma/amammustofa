@@ -28,4 +28,4 @@ Text.propTypes = {
   ...propTypes.typography,
 }
 
-export { Text }
+export default Text

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box } from '@components/Grid'
-import { Text } from '@components/Text'
+import { Box } from '@components/containers'
+import { Text } from '@components/elements'
 
 const Footer = () => (
   <Box as="footer" p="80px 20px">

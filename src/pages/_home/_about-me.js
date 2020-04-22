@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@style'
 import { graphql, useStaticQuery } from 'gatsby'
-import Image from '@components/Image'
-import { Container, Flex, Box } from '@components/Grid'
-import { Text } from '@components/Text'
+import { Image } from '@components/images'
+import { Container, Flex, Box } from '@components/containers'
+import { Text } from '@components/elements'
 
 const query = graphql`
   query {
@@ -63,10 +63,18 @@ const Span = styled.span`
   opacity: 0.1;
   font-weight: 500;
   text-align: center;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
 const ImageWrapper = styled(Image)`
   width: 280px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
 const IndexPage = () => {
@@ -74,19 +82,15 @@ const IndexPage = () => {
   return (
     <Wrapper>
       <Container>
-        <Flex alignItems="center" justifyContent="center" mb="4rem">
-          <LinedText as="h2">ABOUT ME</LinedText>
+        <Flex alignItems="center" justifyContent="center" mb={['0', '4rem']}>
+          <LinedText as="h1">ABOUT ME</LinedText>
           <Span>ABOUT ME</Span>
         </Flex>
-        <Flex flexWrap="wrap">
-          <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center">
+        <Flex flexWrap="wrap" p={['0', '0 50px']}>
+          <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center" mt="1rem">
             <ImageWrapper data={data.image} />
           </Flex>
-          <Flex
-            pl={{ lg: '15px' }}
-            width={{ lg: 0.668, md: 1 }}
-            flexDirection="column"
-          >
+          <Flex width={{ lg: 0.668, md: 1 }} flexDirection="column">
             <Text my={4} fontSize={4} lineHeight="36px" fontWeight="300">
               Hello, I’m <strong>Amam Mustofa</strong>, an independent Frontend
               Developer based in Malaysia.

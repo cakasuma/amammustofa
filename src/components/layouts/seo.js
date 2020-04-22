@@ -216,8 +216,6 @@ SEO.defaultProps = {
   articleMeta: null,
 }
 
-export { SEO }
-
 const query = graphql`
   query SEO {
     site {
@@ -237,3 +235,5 @@ const query = graphql`
     }
   }
 `
+
+export default SEO

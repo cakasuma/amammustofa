@@ -3,9 +3,9 @@ import Typist from 'react-typist'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@style'
 import Particles from 'react-particles-js'
-import Image from '@components/Image'
-import { Text } from '@components/Text'
-import { Flex } from '@components/Grid'
+import { Image } from '@components/images'
+import { Text } from '@components/elements'
+import { Flex } from '@components/containers'
 import {
   FacebookF,
   Linkedin,
@@ -77,6 +77,11 @@ const ItemWrapper = styled.a`
   & > svg {
     width: 20px;
     height: 20px;
+
+    @media (max-width: 480px) {
+      width: 13px;
+      height: 13px;
+    }
   }
 
   &:hover {

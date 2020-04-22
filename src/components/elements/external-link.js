@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GoogleAnalytics from 'react-ga'
 
-const OutboundLink = ({ to, from, target, children, className }) => (
+const ExternalLink = ({ to, from, target, children, className }) => (
   <a
     href={to}
     target={target}
@@ -20,7 +20,7 @@ const OutboundLink = ({ to, from, target, children, className }) => (
   </a>
 )
 
-OutboundLink.propTypes = {
+ExternalLink.propTypes = {
   to: PropTypes.string.isRequired,
   from: PropTypes.string.isRequired,
   target: PropTypes.string,
@@ -28,9 +28,9 @@ OutboundLink.propTypes = {
   className: PropTypes.string,
 }
 
-OutboundLink.defaultProps = {
+ExternalLink.defaultProps = {
   target: ``,
   className: ``,
 }
 
-export default OutboundLink
+export default ExternalLink

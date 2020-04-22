@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GlobalStyles from '@style/GlobalStyles'
 import { ThemeProvider, theme } from '@style'
-import Footer from '@components/Footer'
-import ScrollTop from '@components/scroll-top'
+import { ScrollTop } from '@components/elements'
+import Footer from './footer'
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -20,4 +20,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export { Layout }
+export default Layout
