@@ -83,29 +83,48 @@ const IndexPage = () => {
     <Wrapper>
       <Container>
         <Flex alignItems="center" justifyContent="center" mb={['0', '4rem']}>
-          <LinedText as="h1">ABOUT ME</LinedText>
+          <LinedText as="h1" data-sal="fade">
+            ABOUT ME
+          </LinedText>
           <Span>ABOUT ME</Span>
         </Flex>
         <Flex flexWrap="wrap" p={['0', '0 50px']}>
-          <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center" mt="1rem">
+          <Flex
+            width={{ lg: 0.332, md: 1 }}
+            justifyContent="center"
+            mt="1rem"
+            data-sal="slide-right"
+          >
             <ImageWrapper data={data.image} />
           </Flex>
           <Flex width={{ lg: 0.668, md: 1 }} flexDirection="column">
-            <Text my={4} fontSize={4} lineHeight="36px" fontWeight="300">
+            <Text
+              my={4}
+              fontSize={4}
+              lineHeight="36px"
+              fontWeight="300"
+              data-sal="slide-left"
+            >
               Hello, I’m <strong>Amam Mustofa</strong>, an independent Frontend
               Developer based in Malaysia.
             </Text>
-            <Text mb={5} fontWeight="300">
+            <Text mb={5} fontWeight="300" data-sal="slide-left">
               I always aim to take full responsibility and do my best, My
               purpose is to build long term, strong and mutually beneficial
               relationships with people or clients. and as a developer i have to
               make the most efficient way with concern of the clients to make a
               better program or system.
             </Text>
-            <Text as="h4" fontWeight="300" fontSize={4} mb={4}>
+            <Text
+              as="h4"
+              fontWeight="300"
+              fontSize={4}
+              mb={4}
+              data-sal="slide-left"
+            >
               Personal information
             </Text>
-            <Ul mb={4}>
+            <Ul mb={4} data-sal="slide-left">
               <li>
                 <Text fontWeight="300">
                   <strong>Name:</strong> Mustofa Ghaleb Amami

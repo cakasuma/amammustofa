@@ -135,11 +135,12 @@ const Hero = () => {
           mt="30px"
           mb="20px"
           fontWeight="normal"
+          data-sal="zoom-in"
         >
           Hello Guys, I’m
           <strong> Amam Mustofa</strong>
         </Text>
-        <Flex mb="20px">
+        <Flex mb="20px" data-sal="slide-in">
           <Text mr="6px" fontSize="30px" color="white">
             I am
           </Text>
@@ -152,7 +153,7 @@ const Hero = () => {
           flexWrap="wrap"
           alignItems="center"
         >
-          <SocialWrapper>
+          <SocialWrapper data-sal="slide-in">
             <Li>
               <ItemWrapper href="https://www.facebook.com/amam.mustofa">
                 <FacebookF />
