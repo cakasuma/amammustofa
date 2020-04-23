@@ -89,12 +89,7 @@ const IndexPage = () => {
           <Span>ABOUT ME</Span>
         </Flex>
         <Flex flexWrap="wrap" p={['0', '0 50px']}>
-          <Flex
-            width={{ lg: 0.332, md: 1 }}
-            justifyContent="center"
-            mt="1rem"
-            data-sal="slide-right"
-          >
+          <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center" mt="1rem">
             <ImageWrapper data={data.image} />
           </Flex>
           <Flex width={{ lg: 0.668, md: 1 }} flexDirection="column">
