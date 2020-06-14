@@ -27,74 +27,6 @@ const query = graphql`
   }
 `
 
-const ParticlesAbsolute = styled(Particles)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`
-
-const StyledBackground = styled.div`
-  padding: 90px 0 120px;
-  position: relative;
-  background: ${(props) => props.theme.colors.primary[2]};
-`
-
-const ImageWrapper = styled(Image)`
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-`
-
-const StyledTypist = styled(Typist)`
-  color: ${(props) => props.theme.colors.primary[1]};
-  font-size: 30px;
-  font-weight: bold;
-`
-
-const SocialWrapper = styled.ul`
-  background: rgba(255, 152, 1, 0.3);
-  display: inline-flex;
-  padding: 0 30px;
-  border-radius: 50px;
-  list-style: none;
-  margin: 0;
-`
-
-const ItemWrapper = styled.a`
-  color: ${(props) => props.theme.colors.white};
-  opacity: 0.4;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  transition: all 0.25s;
-  cursor: pointer !important;
-  position: relative;
-
-  & > svg {
-    width: 20px;
-    height: 20px;
-
-    @media (max-width: 480px) {
-      width: 13px;
-      height: 13px;
-    }
-  }
-
-  &:hover {
-    color: ${(props) => props.theme.colors.primary[1]};
-    opacity: 1;
-  }
-`
-
-const Li = styled.li`
-  margin: 0;
-  padding: 0 5px;
-`
-
 const Hero = () => {
   const data = useStaticQuery(query)
   return (
@@ -131,16 +63,15 @@ const Hero = () => {
         <Text
           as="h1"
           fontSize="36px"
-          color="white"
           mt="30px"
           mb="20px"
+          color="white"
           fontWeight="normal"
-          data-sal="zoom-in"
         >
           Hello Guys, I’m
           <strong> Amam Mustofa</strong>
         </Text>
-        <Flex mb="20px" data-sal="slide-in">
+        <Flex mb="20px">
           <Text mr="6px" fontSize="30px" color="white">
             I am
           </Text>
@@ -153,7 +84,7 @@ const Hero = () => {
           flexWrap="wrap"
           alignItems="center"
         >
-          <SocialWrapper data-sal="slide-in">
+          <SocialWrapper>
             <Li>
               <ItemWrapper href="https://www.facebook.com/amam.mustofa">
                 <FacebookF />
@@ -219,5 +150,77 @@ const Typer = () => {
     </>
   )
 }
+
+const ParticlesAbsolute = styled(Particles)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
+const StyledBackground = styled.div`
+  padding: 90px 0 120px;
+  position: relative;
+  background: ${(props) => props.theme.colors.primary[2]};
+`
+
+const ImageWrapper = styled(Image)`
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+`
+
+const StyledTypist = styled(Typist)`
+  color: ${(props) => props.theme.colors.primary[1]};
+  font-size: 30px;
+  font-weight: bold;
+`
+
+const SocialWrapper = styled.ul`
+  background: rgba(255, 152, 1, 0.3);
+  display: inline-flex;
+  padding: 0 30px;
+  border-radius: 50px;
+  list-style: none;
+  margin: 0;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
+    padding: 0;
+  }
+`
+
+const ItemWrapper = styled.a`
+  color: ${(props) => props.theme.colors.white};
+  opacity: 0.4;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.25s;
+  cursor: pointer !important;
+  position: relative;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+
+    @media (max-width: 480px) {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary[1]};
+    opacity: 1;
+  }
+`
+
+const Li = styled.li`
+  margin: 0;
+  padding: 0 5px;
+`
 
 export default Hero

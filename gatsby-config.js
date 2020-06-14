@@ -69,6 +69,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-scroll-reveal`,
   ],
 }

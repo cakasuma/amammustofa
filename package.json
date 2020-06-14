@@ -24,9 +24,9 @@
     "clean": "gatsby clean",
     "test": "jest",
     "test:watch": "jest --watch",
-    "format": "prettier --write \"src/**/*.{jsx,js}\"",
-    "lint:scripts": "eslint './src/**/*.{jsx,js}'",
-    "lint:styles": "stylelint './src/**/*.{jsx,js}'"
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint:scripts": "eslint src/**/**/*.js --fix",
+    "lint:styles": "stylelint src/**/**/*.js --formatter verbose"
   },
   "husky": {
     "hooks": {
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@styled-icons/fa-brands": "^10.0.0",
+    "@styled-icons/fa-solid": "^10.0.0",
     "@styled-icons/feather": "^10.0.0",
     "@styled-system/prop-types": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
@@ -48,7 +49,6 @@
     "gatsby-plugin-manifest": "^2.4.10",
     "gatsby-plugin-offline": "^3.2.8",
     "gatsby-plugin-react-helmet": "^3.3.3",
-    "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^2.6.10",
     "gatsby-plugin-sitemap": "^2.4.4",
     "gatsby-plugin-styled-components": "^3.3.3",

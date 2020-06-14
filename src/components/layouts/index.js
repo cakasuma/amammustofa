@@ -1,6 +1,6 @@
 import Footer from './footer'
-import Header from './header'
+import Nav from './nav'
 import Layout from './layout'
 import Seo from './seo'
 
-export { Footer, Header, Layout, Seo }
+export { Footer, Nav, Layout, Seo }

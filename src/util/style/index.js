@@ -1,7 +1,7 @@
 import * as styledComponents from 'styled-components'
 import propTypes from '@styled-system/prop-types'
 import { themeGet } from '@styled-system/theme-get'
-import { theme } from './theme'
+import { theme, darkTheme } from './theme'
 
 const {
   default: styled,
@@ -17,6 +17,7 @@ export {
   keyframes,
   ThemeProvider,
   theme,
+  darkTheme,
   themeGet,
   propTypes,
 }

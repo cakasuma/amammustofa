@@ -3,9 +3,10 @@
  * This is our custom theme where we define global styles.
  * It should serve as a guideline for styling, but not all styles *have* to be taken from here.
  */
-const breakpoints = ['576px', '768px', '992px', '1200px']
+const breakpoints = ['576px', '768px', '992px', '1200px', '375px']
 
 //  Aliases
+breakpoints.xs = breakpoints[4]
 breakpoints.sm = breakpoints[0]
 breakpoints.md = breakpoints[1]
 breakpoints.lg = breakpoints[2]
@@ -16,66 +17,27 @@ breakpoints.xl = breakpoints[3]
  * Grey: Colors for items that are not that important
  */
 const colors = {
-  pageBackground: 'hsl(228, 33%, 97%)',
   white: 'hsl(0, 0%, 100%)',
   black: 'hsl(0, 0%, 0%)',
   primary: {
     1: '#ff9801',
     2: '#512da8',
-    200: 'hsl(223, 72%, 90%)',
-    300: 'hsl(223, 71%, 76%)',
-    400: 'hsl(227, 63%, 67%)',
-    500: 'hsl(230, 65%, 63%)',
-    600: 'hsl(230, 52%, 53%)',
-    700: 'hsl(230, 51%, 43%)',
-    800: 'hsl(230, 57%, 34%)',
-    900: 'hsl(231, 55%, 28%)',
   },
-  grey: {
-    1: '#b8b3c6',
-    100: 'hsl(210, 17%, 98%)',
-    200: 'hsl(207, 22%, 90%)',
-    300: 'hsl(210, 24%, 87%)',
-    400: 'hsl(208, 17%, 83%)',
-    500: 'hsl(209, 24%, 74%)',
-    600: 'hsl(215, 17%, 63%)',
-    700: 'hsl(214, 11%, 49%)',
-    800: 'hsl(215, 17%, 30%)',
-    900: 'hsl(215, 23%, 16%)',
+  general: '#181a1b',
+  section: '#ffffff',
+  pageBackground: '#ffffff',
+}
+
+const darkColors = {
+  white: 'hsl(0, 0%, 100%)',
+  black: 'hsl(0, 0%, 0%)',
+  primary: {
+    1: '#c27400',
+    2: '#4721a1',
   },
-  red: {
-    100: 'hsl(360, 77%, 95%)',
-    200: 'hsl(360, 79%, 81%)',
-    300: 'hsl(360, 71%, 73%)',
-    400: 'hsl(360, 70%, 64%)',
-    500: 'hsl(360, 71%, 53%)',
-    600: 'hsl(360, 65%, 45%)',
-    700: 'hsl(360, 61%, 38%)',
-    800: 'hsl(360, 63%, 31%)',
-    900: 'hsl(360, 60%, 24%)',
-  },
-  yellow: {
-    100: 'hsl(44, 100%, 98%)',
-    200: 'hsl(44, 90%, 92%)',
-    300: 'hsl(45, 86%, 86%)',
-    400: 'hsl(44, 90%, 80%)',
-    500: 'hsl(43, 87%, 67%)',
-    600: 'hsl(44, 57%, 52%)',
-    700: 'hsl(43, 59%, 42%)',
-    800: 'hsl(43, 64%, 34%)',
-    900: 'hsl(44, 66%, 22%)',
-  },
-  green: {
-    100: 'hsl(142, 81%, 94%)',
-    200: 'hsl(141, 67%, 80%)',
-    300: 'hsl(145, 65%, 68%)',
-    400: 'hsl(146, 57%, 65%)',
-    500: 'hsl(145, 55%, 49%)',
-    600: 'hsl(145, 55%, 41%)',
-    700: 'hsl(145, 59%, 33%)',
-    800: 'hsl(155, 63%, 26%)',
-    900: 'hsl(156, 61%, 20%)',
-  },
+  general: '#ffffff',
+  section: '#1f2223',
+  pageBackground: '#181a1b',
 }
 
 /**
@@ -135,6 +97,18 @@ export const theme = {
   name: 'Default',
   breakpoints,
   colors,
+  space,
+  fontSizes,
+  lineHeights,
+  fontWeights,
+  letterSpacings,
+  radii,
+}
+
+export const darkTheme = {
+  name: 'Dark',
+  breakpoints,
+  colors: darkColors,
   space,
   fontSizes,
   lineHeights,
