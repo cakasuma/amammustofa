@@ -1,7 +1,7 @@
 {
   "name": "amammustofa",
   "description": "I am Rahdin Ahmad Mustofa Ghaleb Amami",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Mustofa Ghaleb Amami",
   "license": "MIT",
   "repository": {
@@ -28,9 +28,17 @@
     "lint:scripts": "eslint src/**/**/*.js --fix",
     "lint:styles": "stylelint src/**/**/*.js --formatter verbose"
   },
+  "lint-staged": {
+    "src/**/**/*.js": [
+        "pretty-quick --staged",
+        "eslint --fix",
+        "stylelint --formatter verbose",
+        "git add"
+    ]
+},
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint:styles && npm run lint:scripts"
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
@@ -56,6 +64,7 @@
     "gatsby-source-filesystem": "^2.3.10",
     "gatsby-transformer-sharp": "^2.5.4",
     "intersection-observer": "^0.10.0",
+    "lint-staged": "^10.2.10",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
