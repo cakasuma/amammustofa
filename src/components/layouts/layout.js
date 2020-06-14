@@ -17,16 +17,14 @@ const Layout = ({ children }) => {
       setDate(new Date())
     }, 1000)
 
+    const hours = date.getHours()
+    const isDayTime = hours > 6 && hours < 20
+    setDarkMode(!isDayTime)
+
     return () => {
       clearInterval(timerID)
     }
   }, [])
-
-  React.useEffect(() => {
-    const hours = date.getHours()
-    const isDayTime = hours > 6 && hours < 20
-    setDarkMode(!isDayTime)
-  }, [date])
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
