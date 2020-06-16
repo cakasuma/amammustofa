@@ -11,7 +11,7 @@ const StyledScrollTop = styled.div`
   font-size: 20px;
   position: fixed;
   right: 32px;
-  bottom: 9%;
+  bottom: 90px;
   cursor: pointer;
 `
 

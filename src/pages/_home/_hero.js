@@ -62,14 +62,21 @@ const Hero = () => {
         <ImageWrapper data={data.image} />
         <Text
           as="h1"
-          fontSize="36px"
+          fontSize={{ _: '36px', s: '32px' }}
           mt="30px"
-          mb="20px"
           color="white"
           fontWeight="normal"
         >
           Hello Guys, I’m
-          <strong> Amam Mustofa</strong>
+        </Text>
+        <Text
+          as="h1"
+          fontSize={{ _: '36px', s: '34px' }}
+          mb="20px"
+          color="white"
+          fontWeight="bold"
+        >
+          Amam Mustofa
         </Text>
         <Flex mb="20px">
           <Text mr="6px" fontSize="30px" color="white">

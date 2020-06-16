@@ -10,6 +10,7 @@ import Footer from './footer'
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
+  const [nightMode, setNightMode] = React.useState(true)
   const [date, setDate] = React.useState(new Date())
 
   React.useEffect(() => {
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
 
     const hours = date.getHours()
     const isDayTime = hours > 6 && hours < 20
-    setDarkMode(!isDayTime)
+    setNightMode(!isDayTime)
 
     return () => {
       clearInterval(timerID)
@@ -35,7 +36,7 @@ const Layout = ({ children }) => {
         <Footer />
         <ScrollTop />
         <DarkMode
-          isDarkMode={darkMode}
+          isNightMode={nightMode}
           onClick={() => setDarkMode(!darkMode)}
           date={date}
         />
@@ -44,9 +45,9 @@ const Layout = ({ children }) => {
   )
 }
 
-const DarkMode = ({ onClick, isDarkMode, date }) => (
+const DarkMode = ({ onClick, isNightMode, date }) => (
   <Toggle onClick={onClick}>
-    {isDarkMode ? <IcMoon /> : <IcSun />}
+    {isNightMode ? <IcMoon /> : <IcSun />}
     <Text color="general">{date.toLocaleTimeString()}</Text>
   </Toggle>
 )
@@ -65,6 +66,7 @@ const Toggle = styled.div`
   display: flex;
   cursor: pointer;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
 `
 
 const iconStyle = css`
@@ -84,7 +86,7 @@ const IcSun = styled(Sun)`
 
 DarkMode.propTypes = {
   onClick: PropTypes.func.isRequired,
-  isDarkMode: PropTypes.bool.isRequired,
+  isNightMode: PropTypes.bool.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
 }
 
