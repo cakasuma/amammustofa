@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider, theme, darkTheme } from '@style'
 import GlobalStyles from '@style/GlobalStyles'
 import { Moon, Sun } from '@styled-icons/fa-solid'
-
 import { ScrollTop, Text } from '@components/elements'
-import Nav from './nav'
+import Nav, { NavButton, useNavClickOutside } from './nav'
 import Footer from './footer'
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
   const [nightMode, setNightMode] = React.useState(true)
   const [date, setDate] = React.useState(new Date())
+  const [navOpen, setNavOpen] = React.useState(false)
+  const navRef = React.useRef()
+
+  useNavClickOutside(navRef, () => setNavOpen(false))
 
   React.useEffect(() => {
     const timerID = setInterval(() => {
@@ -31,7 +34,10 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <Relative>
         <GlobalStyles />
-        <Nav />
+        <div ref={navRef}>
+          <NavButton isOpen={navOpen} setOpen={setNavOpen} />
+          <Nav isOpen={navOpen} setOpen={setNavOpen} />
+        </div>
         {children}
         <Footer />
         <ScrollTop />

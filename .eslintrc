@@ -54,7 +54,7 @@
   "rules": {
     "no-use-before-define": "warn",
     "react/forbid-prop-types": "off",
-    "react/require-default-props": "warn",
+    "react/require-default-props": "off",
     "react/no-danger": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/display-name": "error",

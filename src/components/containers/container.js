@@ -9,9 +9,11 @@ const Container = styled(Box)`
   padding-right: 15px;
   padding-left: 15px;
 
-  @media (min-width: 576px) {
+  @media (max-width: 576px) {
     width: 540px;
     max-width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   @media (min-width: 768px) {

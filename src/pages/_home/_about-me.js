@@ -106,6 +106,12 @@ const Ul = styled(Box).attrs({ as: 'ul' })`
     float: left;
     padding-bottom: 5px;
   }
+
+  @media (max-width: 768px) {
+    & > li {
+      width: 100%;
+    }
+  }
 `
 
 const Wrapper = styled.section`
@@ -143,6 +149,10 @@ const Span = styled.span`
   opacity: 0.1;
   font-weight: 500;
   text-align: center;
+
+  @media (max-width: 576px) {
+    font-size: 80px;
+  }
 
   @media (max-width: 480px) {
     display: none;
