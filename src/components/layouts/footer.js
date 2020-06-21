@@ -7,7 +7,7 @@ import { Text } from '@components/elements'
 const Footer = () => {
   const { t } = useI18next()
   return (
-    <Box as="footer" p="80px 20px 150px">
+    <Box as="footer" p="80px 20px 180px">
       <Text as="h2" mb="20px" textAlign="center" color="general">
         Amam Mustofa
       </Text>

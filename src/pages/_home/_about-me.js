@@ -106,7 +106,7 @@ const Ul = styled(Box).attrs({ as: 'ul' })`
   & > li {
     width: 50%;
     float: left;
-    padding-bottom: 5px;
+    margin-bottom: 16px;
   }
 
   @media (max-width: 768px) {
