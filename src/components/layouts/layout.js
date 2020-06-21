@@ -4,8 +4,12 @@ import styled, { css, ThemeProvider, theme, darkTheme } from '@style'
 import GlobalStyles from '@style/GlobalStyles'
 import { Moon, Sun } from '@styled-icons/fa-solid'
 import { ScrollTop, Text } from '@components/elements'
+import { Switcher } from '@components/localization'
 import Nav, { NavButton, useNavClickOutside } from './nav'
 import Footer from './footer'
+
+// setup localization
+import '@components/localization/setup'
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
@@ -39,6 +43,7 @@ const Layout = ({ children }) => {
           <Nav isOpen={navOpen} setOpen={setNavOpen} />
         </div>
         {children}
+        <Switcher />
         <Footer />
         <ScrollTop />
         <DarkMode

@@ -1,6 +1,7 @@
 import React from 'react'
 import Typist from 'react-typist'
 import { graphql, useStaticQuery } from 'gatsby'
+import { useTranslation } from 'react-i18next'
 import styled from '@style'
 import Particles from 'react-particles-js'
 import { Image } from '@components/images'
@@ -29,6 +30,7 @@ const query = graphql`
 
 const Hero = () => {
   const data = useStaticQuery(query)
+  const { t } = useTranslation('translation')
   return (
     <StyledBackground>
       <ParticlesAbsolute
@@ -67,7 +69,7 @@ const Hero = () => {
           color="white"
           fontWeight="normal"
         >
-          Hello Guys, I’m
+          {t('Hello Guys, I’m')}
         </Text>
         <Text
           as="h1"
@@ -80,7 +82,7 @@ const Hero = () => {
         </Text>
         <Flex mb="20px">
           <Text mr="6px" fontSize="30px" color="white">
-            I am
+            {t('I am')}
           </Text>
           <Typer />
         </Flex>
@@ -131,6 +133,7 @@ const Hero = () => {
 
 const Typer = () => {
   const [count, setCount] = React.useState(1)
+  const { t } = useTranslation('translation')
 
   React.useEffect(() => {
     setCount(1)
@@ -144,11 +147,11 @@ const Typer = () => {
           avgTypingDelay={80}
           onTypingDone={() => setCount(0)}
         >
-          <span>a Developer</span>
+          <span>{t('a Developer')}</span>
           <Typist.Backspace count={11} delay={200} />
-          <span>a Teacher</span>
+          <span>{t('a Teacher')}</span>
           <Typist.Backspace count={9} delay={200} />
-          <span>a Blogger</span>
+          <span>{t('a Blogger')}</span>
           <Typist.Backspace count={9} delay={200} />
         </StyledTypist>
       ) : (
