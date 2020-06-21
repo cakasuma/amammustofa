@@ -1,7 +1,21 @@
 {
+  "Copyright 2020 - All rights reserved": "Copyright 2020 - All rights reserved",
+  "ABOUT ME": "ABOUT ME",
+  "shortDescription": "Hello, I’m <1>Amam Mustofa</1>, an independent Frontend Developer based in Malaysia.",
+  "I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.": "I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.",
+  "Personal information": "Personal information",
+  "Name:": "Name:",
+  "Address:": "Address:",
+  "Birthday:": "Birthday:",
+  "Phone:": "Phone:",
+  "Job:": "Job:",
   "Hello Guys, I’m": "Hello Guys, I’m",
   "I am": "I am",
   "a Developer": "a Developer",
   "a Teacher": "a Teacher",
-  "a Blogger": "a Blogger"
+  "a Blogger": "a Blogger",
+  "404 — Not found": "404 — Not found",
+  "Not found": "Not found",
+  "You just hit a route that doesn&#39;t exist... the sadness.": "You just hit a route that doesn&#39;t exist... the sadness.",
+  "Take me home.": "Take me home."
 }

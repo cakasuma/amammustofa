@@ -73,7 +73,7 @@ module.exports = {
   // Whether to use the keys as the default value; ex. "Hello": "Hello", "World": "World"
   // This option takes precedence over the `defaultValue` and `skipDefaultValues` options
 
-  verbose: false,
+  verbose: true,
   // Display info about the parsing including some stats
 
   customValueTemplate: null,

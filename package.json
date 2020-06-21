@@ -27,7 +27,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "lint:scripts": "eslint src/**/**/*.js --fix",
     "lint:styles": "stylelint src/**/**/*.js --formatter verbose",
-    "translation:extract": "i18next 'src/**/*.{js}' 'src/**/**/*.{js}'"
+    "translation:extract": "i18next src/**/**/*.js"
   },
   "lint-staged": {
     "src/**/**/*.js": [

@@ -179,6 +179,11 @@ const ImageWrapper = styled(Image)`
   width: 270px;
   height: 270px;
   border-radius: 50%;
+
+  @media (max-width: 425px) {
+    width: 220px;
+    height: 220px;
+  }
 `
 
 const StyledTypist = styled(Typist)`

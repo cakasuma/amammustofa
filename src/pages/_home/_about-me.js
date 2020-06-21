@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@style'
 import { graphql, useStaticQuery } from 'gatsby'
+import { Trans, useI18next } from 'gatsby-plugin-react-i18next'
 import { Image } from '@components/images'
 import { Container, Flex, Box } from '@components/containers'
 import { Text } from '@components/elements'
@@ -19,14 +20,15 @@ const query = graphql`
 
 const IndexPage = () => {
   const data = useStaticQuery(query)
+  const { t } = useI18next()
   return (
     <Wrapper>
       <Container>
         <Flex alignItems="center" justifyContent="center" mb={['0', '4rem']}>
           <LinedText as="h1" color="general">
-            ABOUT ME
+            {t('ABOUT ME')}
           </LinedText>
-          <Span>ABOUT ME</Span>
+          <Span>{t('ABOUT ME')}</Span>
         </Flex>
         <Flex flexWrap="wrap" p={['0', '0 50px']}>
           <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center" mt="1rem">
@@ -40,44 +42,44 @@ const IndexPage = () => {
               fontWeight="300"
               color="general"
             >
-              Hello, I’m <strong>Amam Mustofa</strong>, an independent Frontend
-              Developer based in Malaysia.
+              <Trans i18nKey="shortDescription">
+                Hello, I’m <strong key={0}>Amam Mustofa</strong>, an independent
+                Frontend Developer based in Malaysia.
+              </Trans>
             </Text>
             <Text mb={5} fontWeight="300" color="general">
-              I always aim to take full responsibility and do my best, My
-              purpose is to build long term, strong and mutually beneficial
-              relationships with people or clients. and as a developer i have to
-              make the most efficient way with concern of the clients to make a
-              better program or system.
+              {t(
+                'I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.'
+              )}
             </Text>
             <Text as="h4" fontWeight="300" fontSize={4} mb={4} color="general">
-              Personal information
+              {t('Personal information')}
             </Text>
             <Ul mb={4}>
               <li>
                 <Text color="general" fontWeight="300">
-                  <strong>Name:</strong> Mustofa Ghaleb Amami
+                  <strong>{t('Name:')}</strong> Mustofa Ghaleb Amami
                 </Text>
               </li>
               <li>
                 <Text color="general" fontWeight="300">
-                  <strong>Address:</strong> Cyberjaya, Malaysia
+                  <strong>{t('Address:')}</strong> Cyberjaya, Malaysia
                 </Text>
               </li>
               <li>
                 <Text color="general" fontWeight="300">
-                  <strong>Birthday:</strong> 14 April 1998
+                  <strong>{t('Birthday:')}</strong> 14 April 1998
                 </Text>
               </li>
               <li>
                 <Text color="general" fontWeight="300">
-                  <strong>Phone:</strong>{' '}
+                  <strong>{t('Phone:')}</strong>{' '}
                   <a href="tel:+60182655318">+60 182 655 318</a>
                 </Text>
               </li>
               <li>
                 <Text color="general" fontWeight="300">
-                  <strong>Job:</strong> Front-end Developer
+                  <strong>{t('Job:')}</strong> Front-end Developer
                 </Text>
               </li>
               <li>
