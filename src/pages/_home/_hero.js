@@ -1,7 +1,7 @@
 import React from 'react'
 import Typist from 'react-typist'
 import { graphql, useStaticQuery } from 'gatsby'
-import { useTranslation } from 'react-i18next'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import styled from '@style'
 import Particles from 'react-particles-js'
 import { Image } from '@components/images'
@@ -30,7 +30,7 @@ const query = graphql`
 
 const Hero = () => {
   const data = useStaticQuery(query)
-  const { t } = useTranslation('translation')
+  const { t } = useI18next()
   return (
     <StyledBackground>
       <ParticlesAbsolute
@@ -133,7 +133,7 @@ const Hero = () => {
 
 const Typer = () => {
   const [count, setCount] = React.useState(1)
-  const { t } = useTranslation('translation')
+  const { t } = useI18next()
 
   React.useEffect(() => {
     setCount(1)

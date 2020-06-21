@@ -8,9 +8,6 @@ import { Switcher } from '@components/localization'
 import Nav, { NavButton, useNavClickOutside } from './nav'
 import Footer from './footer'
 
-// setup localization
-import '@components/localization/setup'
-
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
   const [nightMode, setNightMode] = React.useState(true)

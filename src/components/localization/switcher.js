@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTranslation } from 'react-i18next'
-import languages from './languages'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import languagesData from '../../../languages'
 
 const Select = styled.div`
   padding: 10px 14px;
@@ -13,21 +13,17 @@ const Button = styled.button`
 `
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation()
-
-  const handleChangelang = (lang) => {
-    i18n.changeLanguage(lang)
-  }
+  const { languages, language, changeLanguage } = useI18next()
 
   return (
     <Select>
-      {languages.map(({ code, label }) => (
+      {languages.map((lang) => (
         <Button
-          key={code}
-          onClick={() => handleChangelang(code)}
-          selected={i18n.language === code}
+          key={lang}
+          onClick={() => changeLanguage(lang)}
+          selected={language === lang}
         >
-          {label}
+          {languagesData[lang]}
         </Button>
       ))}
     </Select>

@@ -1,4 +1,5 @@
 const website = require('./config/website')
+const languages = require('./languages')
 
 const pathPrefix = website.pathPrefix === `/` ? `` : website.pathPrefix
 
@@ -66,6 +67,25 @@ module.exports = {
         theme_color: website.themeColor,
         display: `standalone`,
         icon: website.favicon,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        path: `${__dirname}/locales`,
+        languages: Object.keys(languages),
+        defaultLanguage: `en`,
+
+        // you can pass any i18next options
+        // pass following options to allow message content as a key
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          debug: true,
+          keySeparator: false,
+          nsSeparator: false,
+        },
       },
     },
     `gatsby-plugin-offline`,
