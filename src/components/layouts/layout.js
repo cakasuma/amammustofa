@@ -24,6 +24,7 @@ const Layout = ({ children }) => {
     const hours = date.getHours()
     const isDayTime = hours > 6 && hours < 20
     setNightMode(!isDayTime)
+    setDarkMode(!isDayTime)
 
     return () => {
       clearInterval(timerID)
