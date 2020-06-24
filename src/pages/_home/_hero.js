@@ -30,7 +30,6 @@ const query = graphql`
 
 const Hero = () => {
   const data = useStaticQuery(query)
-  const { t } = useI18next()
   return (
     <StyledBackground>
       <ParticlesAbsolute
@@ -64,16 +63,8 @@ const Hero = () => {
         <ImageWrapper data={data.image} />
         <Text
           as="h1"
-          fontSize={{ _: '36px', s: '32px' }}
-          mt="30px"
-          color="white"
-          fontWeight="normal"
-        >
-          {t('Hello Guys, I’m')}
-        </Text>
-        <Text
-          as="h1"
           fontSize={{ _: '36px', s: '34px' }}
+          mt="30px"
           mb="20px"
           color="white"
           fontWeight="bold"
@@ -81,9 +72,6 @@ const Hero = () => {
           Amam Mustofa
         </Text>
         <Flex mb="20px">
-          <Text mr="6px" fontSize="30px" color="white">
-            {t('I am')}
-          </Text>
           <Typer />
         </Flex>
         <Flex
