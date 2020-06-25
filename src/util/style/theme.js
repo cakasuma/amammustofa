@@ -25,6 +25,7 @@ const colors = {
   },
   general: '#181a1b',
   section: '#ffffff',
+  segment: '#f8f8f8',
   pageBackground: '#ffffff',
 }
 
@@ -37,6 +38,7 @@ const darkColors = {
   },
   general: '#ffffff',
   section: '#1f2223',
+  segment: '#181a1b',
   pageBackground: '#181a1b',
 }
 

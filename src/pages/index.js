@@ -3,6 +3,7 @@ import styled from '@style'
 import { Layout, Seo } from '@components/layouts'
 import Hero from './_home/_hero'
 import AboutMe from './_home/_about-me'
+import Interests from './_home/_interests'
 
 const IndexPage = () => (
   <Layout>
@@ -10,6 +11,7 @@ const IndexPage = () => (
     <Hero />
     <Main>
       <AboutMe />
+      <Interests />
     </Main>
   </Layout>
 )

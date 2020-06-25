@@ -35,18 +35,21 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <Relative>
         <GlobalStyles />
-        <div ref={navRef}>
-          <NavButton isOpen={navOpen} setOpen={setNavOpen} />
-          <Nav isOpen={navOpen} setOpen={setNavOpen} />
-        </div>
+        <Header>
+          <DarkMode
+            isNightMode={nightMode}
+            onClick={() => setDarkMode(!darkMode)}
+            date={date}
+          />
+          <div ref={navRef}>
+            <NavButton isOpen={navOpen} setOpen={setNavOpen} />
+            <Nav isOpen={navOpen} setOpen={setNavOpen} />
+          </div>
+        </Header>
+
         {children}
         <Footer />
         <ScrollTop />
-        <DarkMode
-          isNightMode={nightMode}
-          onClick={() => setDarkMode(!darkMode)}
-          date={date}
-        />
       </Relative>
     </ThemeProvider>
   )
@@ -59,6 +62,20 @@ const DarkMode = ({ onClick, isNightMode, date }) => (
   </Toggle>
 )
 
+const Header = styled.header`
+  background: ${(props) => props.theme.colors.primary[2]};
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+`
+
 const Relative = styled.div`
   background: ${(props) => props.theme.colors.pageBackground};
 `
@@ -67,9 +84,6 @@ const Toggle = styled.div`
   border-radius: 6px;
   padding: 8px 16px;
   background: ${(props) => props.theme.colors.pageBackground};
-  position: fixed;
-  top: 15px;
-  left: 15px;
   display: flex;
   cursor: pointer;
   align-items: center;

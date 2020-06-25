@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GoogleAnalytics from 'react-ga'
 
-const ExternalLink = ({ to, from, target, children, className }) => (
+const ExternalLink = ({ to, from, target, children, className, download }) => (
   <a
     href={to}
     target={target}
@@ -15,6 +15,7 @@ const ExternalLink = ({ to, from, target, children, className }) => (
         label: to,
       })
     }}
+    download={download}
   >
     {children}
   </a>
@@ -26,6 +27,7 @@ ExternalLink.propTypes = {
   target: PropTypes.string,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  download: PropTypes.bool,
 }
 
 ExternalLink.defaultProps = {

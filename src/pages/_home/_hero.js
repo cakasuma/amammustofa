@@ -206,12 +206,12 @@ const ItemWrapper = styled.a`
   position: relative;
 
   & > svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 
     @media (max-width: 480px) {
-      width: 13px;
-      height: 13px;
+      width: 18px;
+      height: 18px;
     }
   }
 

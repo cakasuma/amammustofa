@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby-plugin-react-i18next'
+import { Link } from '@components/elements'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -84,6 +84,7 @@ const StyledMenu = styled.nav`
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
   z-index: 9;
 
   @media (max-width: 576px) {
@@ -115,9 +116,6 @@ const StyledMenu = styled.nav`
 `
 
 const StyledBurger = styled.button`
-  position: fixed;
-  top: 15px;
-  right: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -127,6 +125,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
   z-index: 10;
 
   &:focus {

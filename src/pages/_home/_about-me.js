@@ -4,7 +4,13 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Trans, useI18next } from 'gatsby-plugin-react-i18next'
 import { Image } from '@components/images'
 import { Container, Flex, Box } from '@components/containers'
-import { Text } from '@components/elements'
+import {
+  Text,
+  ExLinkButton,
+  LinkButton,
+  ShadowTitle,
+} from '@components/elements'
+import { Wrapper } from './_components'
 
 const query = graphql`
   query {
@@ -25,12 +31,9 @@ const IndexPage = () => {
     <Wrapper>
       <Container>
         <Flex alignItems="center" justifyContent="center" mb={['0', '4rem']}>
-          <LinedText as="h1" color="general">
-            {t('ABOUT ME')}
-          </LinedText>
-          <Span>{t('ABOUT ME')}</Span>
+          <ShadowTitle title={t('ABOUT ME')} />
         </Flex>
-        <Flex flexWrap="wrap" p={['0', '0 50px']}>
+        <Flex flexWrap="wrap" p={{ lg: '0 50px', sm: '0 30px' }}>
           <Flex width={{ lg: 0.332, md: 1 }} justifyContent="center" mt="1rem">
             <ImageWrapper data={data.image} />
           </Flex>
@@ -91,6 +94,21 @@ const IndexPage = () => {
                 </Text>
               </li>
             </Ul>
+            <Flex flexDirection={{ _: 'column', sm: 'row' }} mt={3}>
+              <ExLinkButton
+                to="/resume.pdf"
+                from="download resume"
+                download
+                variant="primary"
+                mr={{ _: '0', sm: 4 }}
+                mb={{ _: 4, sm: '0' }}
+              >
+                {t('Download resume')}
+              </ExLinkButton>
+              <LinkButton to="/" variant="secondary">
+                {t('Get in Touch')}
+              </LinkButton>
+            </Flex>
           </Flex>
         </Flex>
       </Container>
@@ -113,51 +131,6 @@ const Ul = styled(Box).attrs({ as: 'ul' })`
     & > li {
       width: 100%;
     }
-  }
-`
-
-const Wrapper = styled.section`
-  padding-top: 100px;
-  padding-bottom: 100px;
-  position: relative;
-  background: ${(props) => props.theme.colors.section};
-`
-
-const LinedText = styled(Text)`
-  position: relative;
-  font-weight: 500;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 3px;
-    background: ${(props) => props.theme.colors.general};
-    top: 100%;
-    left: 0;
-    margin-top: 10px;
-  }
-`
-
-const Span = styled.span`
-  position: absolute;
-  top: -32px;
-  z-index: 1;
-  text-transform: uppercase;
-  font-size: 100px;
-  width: 100%;
-  left: 0;
-  color: ${(props) => props.theme.colors.primary[1]};
-  opacity: 0.1;
-  font-weight: 500;
-  text-align: center;
-
-  @media (max-width: 576px) {
-    font-size: 80px;
-  }
-
-  @media (max-width: 480px) {
-    display: none;
   }
 `
 
