@@ -16,7 +16,11 @@ const Contact = () => {
           <Flex alignItems="center" justifyContent="center" mb={['0', '4rem']}>
             <ShadowTitle title={t('GET IN TOUCH')} />
           </Flex>
-          <Flex flexWrap="wrap" p={{ lg: '0 50px', sm: '0 30px' }} m="0 -15px">
+          <Flex
+            flexWrap="wrap"
+            p={{ lg: '0 50px', sm: '0 30px' }}
+            m="80px -15px 0"
+          >
             <Flex
               width={{ lg: 0.608, md: 1 }}
               flexDirection="column"
@@ -30,20 +34,39 @@ const Contact = () => {
                   'I might answer a bit late, but it should be within a day or two'
                 )}
               </Text>
-              <Flex m="24px -15px 0">
-                <SInput label={t('Name')} variant="textfield" />
+              <form action="https://formspree.io/xdowleqj" method="POST">
+                <Flex m="24px -15px 0" flexWrap={{ _: 'wrap', md: 'inherit' }}>
+                  <SInput
+                    name="name"
+                    type="text"
+                    label={t('Name')}
+                    variant="textfield"
+                  />
 
-                <SInput label={t('Email')} variant="textfield" />
-              </Flex>
-              <SArea label={t('Message')} variant="textarea" />
-              <Box mt="24px">
-                <Button variant="primary" type="submit">
-                  {t('Send message')}
-                </Button>
-              </Box>
+                  <SInput
+                    name="_replyto"
+                    type="email"
+                    label={t('Email')}
+                    variant="textfield"
+                  />
+                </Flex>
+                <Flex>
+                  <SArea
+                    label={t('Message')}
+                    name="message"
+                    variant="textarea"
+                  />
+                </Flex>
+
+                <Box mt="24px" mb="30px">
+                  <Button variant="primary" type="submit">
+                    {t('Send message')}
+                  </Button>
+                </Box>
+              </form>
             </Flex>
             <ContactCard
-              width={{ lg: 0.332, md: 1 }}
+              width={{ _: 1, lg: 0.332, md: 1 }}
               flexDirection="column"
               m="0 15px"
               p="30px"
@@ -53,19 +76,25 @@ const Contact = () => {
               </TContact>
               <ContactItem>
                 <Phone />
-                <ExLink to="tel:+60182655318">
+                <ExLink to="tel:+60182655318" from="contact | phone">
                   <Text color="general">+60182655318</Text>
                 </ExLink>
               </ContactItem>
               <ContactItem>
                 <Mail />
-                <ExLink to="mailto:amammustofa@gmail.com">
+                <ExLink
+                  to="mailto:amammustofa@gmail.com"
+                  from="contact | email"
+                >
                   <Text color="general">amammustofa@gmail.com</Text>
                 </ExLink>
               </ContactItem>
               <ContactItem>
                 <MapPin />
-                <ExLink to="http://maps.google.com/maps?q=Cybersquare+Apex+tower+Malaysia">
+                <ExLink
+                  to="http://maps.google.com/maps?q=Cybersquare+Apex+tower+Malaysia"
+                  from="contact | map"
+                >
                   <Text color="general">Cyberjaya, Selangor, Malaysia</Text>
                 </ExLink>
               </ContactItem>
@@ -84,6 +113,7 @@ const SInput = styled(Input)`
 
 const SArea = styled(Input)`
   margin-top: 16px;
+  width: 100%;
 `
 
 const TContact = styled(Text)`
@@ -104,6 +134,7 @@ const TContact = styled(Text)`
 
 const ContactCard = styled(Flex)`
   box-shadow: 0 8px 30px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
 `
 
 const ContactItem = styled(Flex)`
