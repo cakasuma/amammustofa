@@ -1,5 +1,8 @@
 {
   "Copyright 2020 - All rights reserved": "Copyright 2020 - All rights reserved",
+  "a Developer": "a Developer",
+  "a Teacher": "a Teacher",
+  "a Blogger": "a Blogger",
   "ABOUT ME": "ABOUT ME",
   "shortDescription": "Hello, I’m <1>Amam Mustofa</1>, an independent Frontend Developer based in Malaysia.",
   "I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.": "I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.",
@@ -11,9 +14,6 @@
   "Job:": "Job:",
   "Download resume": "Download resume",
   "Get in Touch": "Get in Touch",
-  "a Developer": "a Developer",
-  "a Teacher": "a Teacher",
-  "a Blogger": "a Blogger",
   "INTERESTS": "INTERESTS",
   "Manga reading": "Manga reading",
   "Coding": "Coding",
@@ -22,5 +22,17 @@
   "404 — Not found": "404 — Not found",
   "Not found": "Not found",
   "You just hit a route that doesn&#39;t exist... the sadness.": "You just hit a route that doesn&#39;t exist... the sadness.",
-  "Take me home.": "Take me home."
+  "Take me home.": "Take me home.",
+  "Contact": "Contact",
+  "Let's get in touch": "Let's get in touch",
+  "GET IN TOUCH": "GET IN TOUCH",
+  "Feel free to Drop a line": "Feel free to Drop a line",
+  "I might answer a bit late, but it should be within a day or two": "I might answer a bit late, but it should be within a day or two",
+  "Name": "Name",
+  "Email": "Email",
+  "Message": "Message",
+  "Send message": "Send message",
+  "Contact Information": "Contact Information",
+  "Home | About | Amam": "Home | About | Amam",
+  "Developer | Teacher | trying to be blogger.. -- Code | Manga | Eat are my favorites": "Developer | Teacher | trying to be blogger.. -- Code | Manga | Eat are my favorites"
 }

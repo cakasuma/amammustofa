@@ -3,9 +3,8 @@ import styled from '@style'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { BookOpen, Chrome } from '@styled-icons/feather'
 import { GameController, Airplane } from '@styled-icons/ionicons-outline'
-import { Flex, Container } from '@components/containers'
+import { Flex, Container, Wrapper } from '@components/containers'
 import { ShadowTitle, Text } from '@components/elements'
-import { Wrapper } from './_components'
 
 const Interest = () => {
   const { t } = useI18next()

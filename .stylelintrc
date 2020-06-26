@@ -16,5 +16,6 @@
     "property-no-vendor-prefix": true,
     "value-keyword-case": null,
     "declaration-colon-newline-after": null,
+    "no-descending-specificity": null,
   }
 }

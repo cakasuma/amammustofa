@@ -7,4 +7,4 @@ const Wrapper = styled.section`
   background: ${(props) => props.theme.colors.section};
 `
 
-export { Wrapper }
+export default Wrapper

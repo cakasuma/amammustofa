@@ -44,6 +44,7 @@
       "alias": {
         "map": [
           ["@style", "./src/util/style"],
+          ["@tool", "./src/util/tool"],
           ["@components", "./src/components"],
           ["@test", "./src/util/test"]
         ],

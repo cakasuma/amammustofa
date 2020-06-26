@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css, ThemeProvider, theme, darkTheme } from '@style'
+import styled, { ThemeProvider, theme, darkTheme } from '@style'
 import GlobalStyles from '@style/GlobalStyles'
-import { Moon, Sun } from '@styled-icons/fa-solid'
-import { ScrollTop, Text } from '@components/elements'
 import Nav, { NavButton, useNavClickOutside } from './nav'
 import Footer from './footer'
+import ScrollTop from './scroll-top'
+import DarkMode from './dark-mode'
+import Hero from './hero'
+
+const isBrowser = window !== undefined
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
@@ -13,6 +16,7 @@ const Layout = ({ children }) => {
   const [date, setDate] = React.useState(new Date())
   const [navOpen, setNavOpen] = React.useState(false)
   const navRef = React.useRef()
+  const darkModeName = 'theme-ui-darkmode'
 
   useNavClickOutside(navRef, () => setNavOpen(false))
 
@@ -24,12 +28,21 @@ const Layout = ({ children }) => {
     const hours = date.getHours()
     const isDayTime = hours > 6 && hours < 20
     setNightMode(!isDayTime)
-    setDarkMode(!isDayTime)
+
+    const isDarkMode = localStorage.getItem(darkModeName) === 'true'
+    setDarkMode(isDarkMode)
 
     return () => {
       clearInterval(timerID)
     }
   }, [])
+
+  const changeDarkMode = () => {
+    setDarkMode(!darkMode)
+    if (isBrowser) {
+      localStorage.setItem('theme-ui-darkmode', !darkMode)
+    }
+  }
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
@@ -38,7 +51,7 @@ const Layout = ({ children }) => {
         <Header>
           <DarkMode
             isNightMode={nightMode}
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={changeDarkMode}
             date={date}
           />
           <div ref={navRef}>
@@ -46,8 +59,8 @@ const Layout = ({ children }) => {
             <Nav isOpen={navOpen} setOpen={setNavOpen} />
           </div>
         </Header>
-
-        {children}
+        <Hero />
+        <Main>{children}</Main>
         <Footer />
         <ScrollTop />
       </Relative>
@@ -55,12 +68,9 @@ const Layout = ({ children }) => {
   )
 }
 
-const DarkMode = ({ onClick, isNightMode, date }) => (
-  <Toggle onClick={onClick}>
-    {isNightMode ? <IcMoon /> : <IcSun />}
-    <Text color="general">{date.toLocaleTimeString()}</Text>
-  </Toggle>
-)
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 const Header = styled.header`
   background: ${(props) => props.theme.colors.primary[2]};
@@ -80,39 +90,12 @@ const Relative = styled.div`
   background: ${(props) => props.theme.colors.pageBackground};
 `
 
-const Toggle = styled.div`
-  border-radius: 6px;
-  padding: 8px 16px;
+const Main = styled.main`
+  max-width: 1250px;
+  box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin: -90px auto 0;
   background: ${(props) => props.theme.colors.pageBackground};
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
 `
-
-const iconStyle = css`
-  color: ${(props) => props.theme.colors.primary[1]};
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
-`
-
-const IcMoon = styled(Moon)`
-  ${iconStyle}
-`
-
-const IcSun = styled(Sun)`
-  ${iconStyle}
-`
-
-DarkMode.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  isNightMode: PropTypes.bool.isRequired,
-  date: PropTypes.instanceOf(Date).isRequired,
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

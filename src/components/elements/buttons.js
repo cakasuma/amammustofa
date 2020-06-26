@@ -11,7 +11,9 @@ const buttonStyle = css`
   padding: 15px 30px;
   box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.1);
   transition: background 0.25s;
+  font-size: 16px;
   cursor: pointer;
+  border: none;
 
   &:hover {
     text-decoration: none;

@@ -3,14 +3,13 @@ import styled from '@style'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Trans, useI18next } from 'gatsby-plugin-react-i18next'
 import { Image } from '@components/images'
-import { Container, Flex, Box } from '@components/containers'
+import { Container, Flex, Box, Wrapper } from '@components/containers'
 import {
   Text,
   ExLinkButton,
   LinkButton,
   ShadowTitle,
 } from '@components/elements'
-import { Wrapper } from './_components'
 
 const query = graphql`
   query {
@@ -105,7 +104,7 @@ const IndexPage = () => {
               >
                 {t('Download resume')}
               </ExLinkButton>
-              <LinkButton to="/" variant="secondary">
+              <LinkButton to="/contact" variant="secondary">
                 {t('Get in Touch')}
               </LinkButton>
             </Flex>

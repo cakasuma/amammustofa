@@ -13,6 +13,13 @@ const Nav = ({ isOpen }) => {
         </span>
         About
       </Link>
+      <Link to="/contact">
+        <span role="img" aria-label="about us">
+          💸
+          {/* TODO: add logo here */}
+        </span>
+        Contact
+      </Link>
       {/* TODO: add these when the pages are ready */}
       {/* <Link to="/">
         <span role="img" aria-label="price">
@@ -79,7 +86,7 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   height: 100%;
   text-align: left;
-  padding: 2rem;
+  padding: 4rem 3rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -92,9 +99,9 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 1.8rem 0 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: ${(props) => props.theme.colors.general};
