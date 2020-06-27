@@ -44,6 +44,13 @@ const buttonStyle = css`
         return null
     }
   }}
+  ${(props) =>
+    props.disabled &&
+    css`
+      opacity: 0.32;
+      pointer-events: none;
+      cursor: not-allowed;
+    `}
   @media (max-width: 768px) {
     font-size: 15px;
   }

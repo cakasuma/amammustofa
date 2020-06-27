@@ -48,7 +48,44 @@ module.exports = {
       },
     },
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+   
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map((edge) => {
+            const { path } = edge.node
+            return {
+              url: site.siteMetadata.siteUrl + path, // https://sitemaps.com/page-path
+              changefreq: 'daily',
+              priority: 0.7,
+              links: [
+                // https://sitemaps.com/page-path
+                { lang: 'en', url: site.siteMetadata.siteUrl + path },
+                // https://sitemaps.com/es/page-path
+                { lang: 'id', url: `${site.siteMetadata.siteUrl}/id${path}` },
+                // The default in case page for user's language is not localized.
+                { lang: 'x-default', url: site.siteMetadata.siteUrl + path },
+              ],
+            }
+          }),
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -88,6 +125,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
   ],
 }

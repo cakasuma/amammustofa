@@ -1,8 +1,8 @@
 import React from 'react'
-import Typist from 'react-typist'
+import useTypewriter from 'react-typewriter-hook'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import styled from '@style'
+import styled, { keyframes } from '@style'
 import Particles from 'react-particles-js'
 import { Image } from '@components/images'
 import { Text } from '@components/elements'
@@ -120,33 +120,26 @@ const Hero = () => {
 }
 
 const Typer = () => {
-  const [count, setCount] = React.useState(1)
   const { t } = useI18next()
+  const textList = [t('a Developer'), t('a Teacher'), t('a Blogger')]
+  const [currentText, setCurrentText] = React.useState(textList[0])
+  const intervalRef = React.useRef({})
+  const typeText = useTypewriter(currentText)
+  let index = 0
 
   React.useEffect(() => {
-    setCount(1)
-  }, [count])
+    intervalRef.current = setInterval(() => {
+      // index = index + 1 > 2 ? 0 : ++index + 1;
+      // eslint-disable-next-line no-plusplus
+      index = index > 2 ? 0 : ++index
+      setCurrentText(textList[index])
+    }, 3000)
+    return () => {
+      clearInterval(intervalRef.current)
+    }
+  }, [currentText])
 
-  return (
-    <>
-      {count ? (
-        <StyledTypist
-          cursor={{ blink: true }}
-          avgTypingDelay={80}
-          onTypingDone={() => setCount(0)}
-        >
-          <span>{t('a Developer')}</span>
-          <Typist.Backspace count={11} delay={200} />
-          <span>{t('a Teacher')}</span>
-          <Typist.Backspace count={9} delay={200} />
-          <span>{t('a Blogger')}</span>
-          <Typist.Backspace count={9} delay={200} />
-        </StyledTypist>
-      ) : (
-        ''
-      )}
-    </>
-  )
+  return <StyledTypist>{typeText}</StyledTypist>
 }
 
 const ParticlesAbsolute = styled(Particles)`
@@ -174,10 +167,42 @@ const ImageWrapper = styled(Image)`
   }
 `
 
-const StyledTypist = styled(Typist)`
+const cursorAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`
+
+const StyledTypist = styled(Text)`
   color: ${(props) => props.theme.colors.primary[1]};
   font-size: 30px;
   font-weight: bold;
+  position: relative;
+  height: 45px;
+
+  &:empty {
+    height: 45px;
+  }
+
+  &::after {
+    content: '';
+    margin: auto;
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 3px;
+    height: 100%;
+    background-color: ${(props) => props.theme.colors.primary[1]};
+    animation: ${cursorAnimation} 1.5s step-end infinite;
+  }
 `
 
 const SocialWrapper = styled.ul`

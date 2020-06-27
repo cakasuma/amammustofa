@@ -59,6 +59,7 @@
     "react/no-danger": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/display-name": "error",
+    "react/jsx-props-no-spreading": "warn",
     "react/destructuring-assignment": [
       "error",
       "always",

@@ -7,6 +7,7 @@ const Input = ({
   value,
   name,
   onChange,
+  onBlur,
   error,
   fullWidth,
   type,
@@ -20,7 +21,8 @@ const Input = ({
         type={type || 'text'}
         value={value}
         name={name}
-        onChange={(e) => onChange && onChange(e)}
+        onBlur={onBlur}
+        onChange={onChange}
       />
     )}
     {variant === 'textarea' && (
@@ -29,7 +31,8 @@ const Input = ({
         type={type || 'text'}
         value={value}
         name={name}
-        onChange={(e) => onChange && onChange(e)}
+        onBlur={onBlur}
+        onChange={onChange}
       />
     )}
 
@@ -42,6 +45,7 @@ Input.propTypes = {
   value: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   error: PropTypes.bool,
   fullWidth: PropTypes.bool,
   type: PropTypes.string,
