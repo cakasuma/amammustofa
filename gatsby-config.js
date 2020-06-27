@@ -51,6 +51,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        exclude: [
+          '/404',
+          '/**/404.html',
+          '/**/404',
+          '/offline-plugin-app-shell-fallback',
+          '/**/offline-plugin-app-shell-fallback',
+        ],
         query: `
           {
             site {
@@ -141,7 +148,18 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: ['/404/', '/offline-plugin-app-shell-fallback/'],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }
