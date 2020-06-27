@@ -70,18 +70,34 @@ module.exports = {
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map((edge) => {
             const { path } = edge.node
+            const pathArray = path.split('/')
+            const currentLang = pathArray[1]
+            const checkLang = currentLang.replace('-', '_')
+            let currentPage = path
+            const keyLanguages = Object.keys(languages)
+
+            if (keyLanguages.includes(checkLang)) {
+              pathArray.splice(1, 1)
+              currentPage = pathArray.join('/')
+            }
+
+            const sitemapLangs = keyLanguages.concat(['x-default'])
+
+            const links = sitemapLangs.map((locale) => {
+              const replacedLocale = locale.replace('_', '-')
+
+              const isDefault = locale === 'en' || locale === 'x-default'
+              const hrefLocale = isDefault ? '' : `/${replacedLocale}`
+              const href = `${site.siteMetadata.siteUrl}${hrefLocale}${currentPage}`
+
+              return { lang: replacedLocale, url: href }
+            })
+
             return {
               url: site.siteMetadata.siteUrl + path, // https://sitemaps.com/page-path
               changefreq: 'daily',
               priority: 0.7,
-              links: [
-                // https://sitemaps.com/page-path
-                { lang: 'en', url: site.siteMetadata.siteUrl + path },
-                // https://sitemaps.com/es/page-path
-                { lang: 'id', url: `${site.siteMetadata.siteUrl}/id${path}` },
-                // The default in case page for user's language is not localized.
-                { lang: 'x-default', url: site.siteMetadata.siteUrl + path },
-              ],
+              links,
             }
           }),
       },
