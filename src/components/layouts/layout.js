@@ -8,7 +8,7 @@ import ScrollTop from './scroll-top'
 import DarkMode from './dark-mode'
 import Hero from './hero'
 
-const isBrowser = window !== undefined
+const isBrowser = typeof window !== 'undefined'
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = React.useState(true)
