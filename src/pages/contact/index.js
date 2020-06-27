@@ -137,7 +137,11 @@ const Contact = () => {
               </TContact>
               <ContactItem mb="24px" mt="16px">
                 <Phone />
-                <ExLink to="tel:+60182655318" from="contact | phone">
+                <ExLink
+                  to="tel:+60182655318"
+                  from="contact | phone"
+                  target="_blank"
+                >
                   <Text color="general">+60182655318</Text>
                 </ExLink>
               </ContactItem>
@@ -155,6 +159,7 @@ const Contact = () => {
                 <ExLink
                   to="http://maps.google.com/maps?q=Cybersquare+Apex+tower+Malaysia"
                   from="contact | map"
+                  target="_blank"
                 >
                   <Text color="general">Cyberjaya, Selangor, Malaysia</Text>
                 </ExLink>
