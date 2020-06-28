@@ -6,14 +6,14 @@ import styled from 'styled-components'
 const Nav = ({ isOpen }) => {
   return (
     <StyledMenu open={isOpen}>
-      <Link to="/">
+      <Link to="/" from="Navigation | Home">
         <span role="img" aria-label="about us">
           💁🏻‍♂️
           {/* TODO: add logo here */}
         </span>
         About
       </Link>
-      <Link to="/contact">
+      <Link to="/contact" from="Navigation | Contact">
         <span role="img" aria-label="about us">
           💸
           {/* TODO: add logo here */}

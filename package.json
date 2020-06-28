@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "start": "gatsby develop -o",
-    "build": "gatsby clean && gatsby build",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "test": "jest",
     "test:watch": "jest --watch",

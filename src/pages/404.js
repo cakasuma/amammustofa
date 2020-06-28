@@ -14,7 +14,9 @@ const NotFoundPage = () => {
       <Text mr="1.6rem">
         {t('You just hit a route that doesn&#39;t exist... the sadness.')}
       </Text>
-      <Link to="/">{t('Take me home.')}</Link>
+      <Link to="/" from="404 | Home">
+        {t('Take me home.')}
+      </Link>
     </Layout>
   )
 }

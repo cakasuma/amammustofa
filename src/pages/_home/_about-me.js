@@ -104,7 +104,11 @@ const IndexPage = () => {
               >
                 {t('Download resume')}
               </ExLinkButton>
-              <LinkButton to="/contact" variant="secondary">
+              <LinkButton
+                to="/contact"
+                from="Home | Contact"
+                variant="secondary"
+              >
                 {t('Get in Touch')}
               </LinkButton>
             </Flex>
