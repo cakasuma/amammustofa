@@ -1,6 +1,6 @@
 ### My test personal website
 
-[amammustofa.live](https://cakasuma.github.io/amammustofa)
+[url link](https://cakasuma.github.io/amammustofa)
 
 #### Tech stack
 
