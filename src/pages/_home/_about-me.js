@@ -3,7 +3,7 @@ import styled from '@style'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Trans, useI18next } from 'gatsby-plugin-react-i18next'
 import { Image } from '@components/images'
-import { Container, Flex, Box, Wrapper } from '@components/containers'
+import { Container, Flex, Wrapper } from '@components/containers'
 import {
   Text,
   ExLinkButton,
@@ -54,45 +54,6 @@ const IndexPage = () => {
                 'I always aim to take full responsibility and do my best, My purpose is to build long term, strong and mutually beneficial relationships with people or clients. and as a developer i have to make the most efficient way with concern of the clients to make a better program or system.'
               )}
             </Text>
-            <Text as="h4" fontWeight="300" fontSize={4} mb={4} color="general">
-              {t('Personal information')}
-            </Text>
-            <Ul mb={4}>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>{t('Name:')}</strong> Mustofa Ghaleb Amami
-                </Text>
-              </li>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>{t('Address:')}</strong> Cyberjaya, Malaysia
-                </Text>
-              </li>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>{t('Birthday:')}</strong> 14 April 1998
-                </Text>
-              </li>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>{t('Phone:')}</strong>{' '}
-                  <a href="tel:+60182655318">+60 182 655 318</a>
-                </Text>
-              </li>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>{t('Job:')}</strong> Front-end Developer
-                </Text>
-              </li>
-              <li>
-                <Text color="general" fontWeight="300">
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:amammustofa@gmail.com">
-                    amammustofa@gmail.com
-                  </a>
-                </Text>
-              </li>
-            </Ul>
             <Flex flexDirection={{ _: 'column', sm: 'row' }} mt={3}>
               <ExLinkButton
                 to="/resume.pdf"
@@ -118,24 +79,6 @@ const IndexPage = () => {
     </Wrapper>
   )
 }
-
-const Ul = styled(Box).attrs({ as: 'ul' })`
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: 0;
-
-  & > li {
-    width: 50%;
-    float: left;
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 768px) {
-    & > li {
-      width: 100%;
-    }
-  }
-`
 
 const ImageWrapper = styled(Image)`
   width: 280px;

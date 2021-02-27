@@ -18,7 +18,7 @@ import { Mail } from '@styled-icons/feather/Mail'
 
 const query = graphql`
   query {
-    image: file(relativePath: { eq: "profile.jpg" }) {
+    image: file(relativePath: { eq: "profile.png" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid
@@ -121,7 +121,7 @@ const Hero = () => {
 
 const Typer = () => {
   const { t } = useI18next()
-  const textList = [t('a Developer'), t('a Teacher'), t('a Blogger')]
+  const textList = [t('Developer'), t('Blogger'), t('Dragon Slayer')]
   const [currentText, setCurrentText] = React.useState(textList[0])
   const intervalRef = React.useRef({})
   const typeText = useTypewriter(currentText)
