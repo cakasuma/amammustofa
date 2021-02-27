@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: `/`,
-  url: `https://amammustofa.live`,
+  url: `http://cakasuma.github.io/amammustofa`,
   title: `Rahdin Ahmad Mustofa Ghaleb Amami`,
   titleTemplate: `%s — My profile`,
   description: `Let's build career together`,
