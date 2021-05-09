@@ -1,6 +1,6 @@
 ### My test personal website
 
-[url link](https://cakasuma.github.io/amammustofa)
+[url link](https://amammustofa.netlify.app)
 
 #### Tech stack
 
